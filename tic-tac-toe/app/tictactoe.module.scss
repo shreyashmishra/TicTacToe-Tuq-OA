@@ -1,0 +1,122 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  background: var(--card);
+  color: var(--card-contrast);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--foreground);
+  transition: background 0.2s, transform 0.05s ease-in-out, border-color 0.2s;
+}
+
+.square:hover {
+  background: var(--muted);
+}
+
+.square:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.square:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+/* Token colors */
+.squareX {
+  color: var(--x-color);
+}
+
+.squareO {
+  color: var(--o-color);
+}
+
+.status {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+}
+
+.reset {
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--foreground);
+  transition: background 0.2s, border-color 0.2s, transform 0.05s ease-in-out;
+}
+
+.reset:hover {
+  background: var(--muted);
+}
+
+.reset:active {
+  transform: translateY(1px);
+}
+
+.reset:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+/* Winner/Draw block */
+.result {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resultMessage {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}

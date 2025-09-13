@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* App theme */
+  --accent: #3b82f6;            /* blue-500 */
+  --accent-contrast: #ffffff;
+  --muted: #f3f4f6;             /* gray-100 */
+  --muted-contrast: #111827;    /* gray-900 */
+  --border: #e5e7eb;            /* gray-200 */
+  --card: #ffffff;
+  --card-contrast: #111827;
+  --x-color: #ef4444;           /* red-500 */
+  --o-color: #10b981;           /* emerald-500 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    /* Dark theme counterparts */
+    --accent: #60a5fa;            /* blue-400 */
+    --accent-contrast: #0a0a0a;
+    --muted: #111827;             /* gray-900 */
+    --muted-contrast: #e5e7eb;    /* gray-200 */
+    --border: #1f2937;            /* gray-800 */
+    --card: #0f172a;              /* slate-900 */
+    --card-contrast: #e5e7eb;     /* gray-200 */
+    --x-color: #f87171;           /* red-400 */
+    --o-color: #34d399;           /* emerald-400 */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
